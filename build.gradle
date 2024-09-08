@@ -20,6 +20,7 @@ dependencies {
 
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
 
+    implementation 'javax.persistence:javax.persistence-api:2.2'
 
     // Base de datos H2 para desarrollo
     runtimeOnly 'com.h2database:h2:1.4.200'
