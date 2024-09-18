@@ -2,6 +2,7 @@ package org.example;
 
 import javax.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Builder
 
 @Entity
+@Audited
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

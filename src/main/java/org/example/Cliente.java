@@ -2,6 +2,7 @@ package org.example;
 
 import javax.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,6 +12,7 @@ import lombok.*;
 @Builder
 
 @Entity
+@Audited
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

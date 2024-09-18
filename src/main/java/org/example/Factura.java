@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +17,7 @@ import lombok.*;
 @Builder
 
 @Entity
+@Audited
 public class Factura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,8 +2,12 @@ package org.example;
 
 import javax.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
+
+import java.util.ArrayList;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -14,6 +18,7 @@ import java.util.Set;
 @Builder
 
 @Entity
+@Audited
 public class Articulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +26,10 @@ public class Articulo {
     private int precio;
     private int cantidad;
     private String denominacion;
+
+    @OneToMany(mappedBy = "articulo")
+    @Builder.Default
+    private List<DetalleFactura> detallefactura = new ArrayList<DetalleFactura>();
 
     @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(
